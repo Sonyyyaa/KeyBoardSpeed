@@ -5,8 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KeyBoardSpeed"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Background="DarkOrchid"/>
+        Title="MainWindow" Height="450" Width="800" 
+        Loaded="Window_Loaded"
+        >
+    <Grid  Background="#FB2576">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <RichTextBox x:Name="texttocopy" 
+                     Grid.Column="3" 
+                     Grid.RowSpan="3"
+                     IsReadOnly="True"/>
+        <RichTextBox x:Name="typeText"
+            Grid.ColumnSpan="4" 
+                     Grid.Row="3"
+                     TextChanged="RichTextBox_TextChanged"/>
+        <Button Click="Button_Click"
+            Grid.Column="2" 
+                Grid.Row="2" 
+                Background="DeepPink"
+                Margin="5, 5, 5, 5"/>
+        <Label x:Name="scoreChange"
+            Grid.Row="1"
+               Grid.Column="2"
+               Content="Score"
+               FontSize="40"
+               HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="letter"
+                Grid.Column="1" 
+                 Grid.Row="1"
+                 Grid.RowSpan="2"
+                 Text="A"
+                 FontSize="100"
+                 TextAlignment="Center"
+                 IsReadOnly="True"/>
     </Grid>
 </Window>
