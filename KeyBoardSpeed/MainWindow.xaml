@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800" 
         Loaded="Window_Loaded"
         >
-    <Grid  Background="#FB2576">
+    <Grid  Background="#FFE6F7">
         <Grid.RowDefinitions>
             <RowDefinition Height="150"/>
             <RowDefinition Height="80"/>
@@ -21,32 +21,55 @@
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <RichTextBox x:Name="texttocopy" 
+        <RichTextBox
+            x:Name="texttocopy" 
+                     Margin="5,5,5,5"
                      Grid.Column="3" 
                      Grid.RowSpan="3"
-                     IsReadOnly="True"/>
-        <RichTextBox x:Name="typeText"
-            Grid.ColumnSpan="4" 
+                     IsReadOnly="True" BorderBrush="#FFDE1AE8" Padding="23,10,10,10" Background="LavenderBlush" ScrollViewer.CanContentScroll="True" RenderTransformOrigin="0.5,0.5" FontFamily="Sitka Text" FontSize="18" FontWeight="Bold">
+            <RichTextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </RichTextBox.RenderTransform>
+            <RichTextBox.OpacityMask>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFE57DD7" Offset="1"/>
+                </LinearGradientBrush>
+            </RichTextBox.OpacityMask>
+        </RichTextBox>
+        <RichTextBox 
+            x:Name="typeText"
+                     Grid.ColumnSpan="4" 
+                     Margin="5,5,5,5"
                      Grid.Row="3"
-                     TextChanged="RichTextBox_TextChanged"/>
-        <Button Click="Button_Click"
+                     TextChanged="RichTextBox_TextChanged" BorderBrush="#FF160F0F" FontFamily="Book Antiqua" FontWeight="Bold" Padding="100,100,100,100" FontSize="20"/>
+        <Button Background="#C689C6"
+            Click="Button_Click"
             Grid.Column="2" 
                 Grid.Row="2" 
-                Background="DeepPink"
-                Margin="5, 5, 5, 5"/>
-        <Label x:Name="scoreChange"
+                
+                Margin="5, 5, 5, 5" BorderBrush="#FFEB0D97" BorderThickness="3,3,3,3" Content="Push" Foreground="#FF2F051C" FontSize="36" FontFamily="Sitka Text"/>
+        <Label Background="#FFABE1"
+            x:Name="scoreChange"
             Grid.Row="1"
                Grid.Column="2"
                Content="Score"
                FontSize="40"
-               HorizontalContentAlignment="Center"/>
-        <TextBox x:Name="letter"
+               Margin="5,5,5,5" BorderThickness="3,3,3,3" BorderBrush="#FF802166" FontFamily="Sitka Text" VerticalAlignment="Top" HorizontalContentAlignment="Center" Foreground="#FF370606"/>
+        <TextBox Background="#FFECEF"
+            x:Name="letter"
                 Grid.Column="1" 
                  Grid.Row="1"
                  Grid.RowSpan="2"
                  Text="A"
                  FontSize="100"
+                 Margin="10,10,10,10"
                  TextAlignment="Center"
-                 IsReadOnly="True"/>
+                 IsReadOnly="True" BorderBrush="#FFBA11CF" Foreground="#FF171515" FontFamily="Century" BorderThickness="3,3,3,3"/>
     </Grid>
 </Window>
