@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Windows.Threading;
+using Microsoft.Win32;
 
 namespace KeyBoardSpeed
 {
@@ -62,6 +63,13 @@ namespace KeyBoardSpeed
         private void RichTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             TextRange textRange = new TextRange(typeText.Document.ContentStart, typeText.Document.ContentEnd);
+
+            if(string.IsNullOrEmpty(textRange.Text.Trim('\n', '\r')))
+            {
+                letter.Background = new SolidColorBrush(Color.FromRgb(0, 255, 0));
+                return;
+            }
+
             if(textRange.Text.Trim('\n', '\r').Last() == letter.Text.Last())
             {
                 score++;
@@ -69,6 +77,25 @@ namespace KeyBoardSpeed
                 letter.Background = new SolidColorBrush(Color.FromRgb(0, 255, 0));
             }
             
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (speedValue != null)
+            {
+                speedValue.Text = ((int)speed.Value).ToString();
+                timer.Interval = TimeSpan.FromSeconds((int)speed.Value);
+            }
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.ShowDialog();
+
+            listbox.Items.Add(openFileDialog.FileName);
+            //MessageBox.Show(openFileDialog.FileName);
         }
     }
 }
