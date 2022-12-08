@@ -47,7 +47,11 @@
                      Grid.ColumnSpan="4" 
                      Margin="5,5,5,5"
                      Grid.Row="3"
-                     TextChanged="RichTextBox_TextChanged" BorderBrush="#FF160F0F" FontFamily="Book Antiqua" FontWeight="Bold" Padding="100,100,100,100" FontSize="20"/>
+
+                     TextChanged="RichTextBox_TextChanged" 
+                    BorderBrush="#FF160F0F" FontFamily="Book Antiqua" FontWeight="Bold" 
+                    FontSize="20"/>
+
         <Button Background="#C689C6"
             Click="Button_Click"
             Grid.Column="2" 
@@ -61,7 +65,37 @@
                Content="Score"
                FontSize="40"
                Margin="5,5,5,5" BorderThickness="3,3,3,3" BorderBrush="#FF802166" FontFamily="Sitka Text" VerticalAlignment="Top" HorizontalContentAlignment="Center" Foreground="#FF370606"/>
+        <Slider x:Name="speed"
+            Grid.Row="0"
+                Grid.Column="2"
+                VerticalAlignment="Center"
+                Minimum="1"
+                Maximum="6" Background="#FFE6A5E3" ValueChanged="Slider_ValueChanged"
+                Interval="1"
+                />
+        <TextBlock x:Name="speedValue" 
+            Grid.Row="0"
+               Grid.Column="2"
+               VerticalAlignment="Top"
+               Text="Speed"
+               FontSize="30"
+               HorizontalAlignment="Center"/>
+        <ListBox x:Name="listbox"
+                 Grid.Row="0"
+                 Grid.ColumnSpan="2">
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Add" Click="MenuItem_Click"/>
+                    <MenuItem Header="Delete"/>
+                    <Separator/>
+                    <MenuItem Header="Change"/>
+                </ContextMenu>
+            </ListBox.ContextMenu>
+        </ListBox>
+            <TextBox Background="#FFECEF"
+
         <TextBox Background="#FFECEF"
+
             x:Name="letter"
                 Grid.Column="1" 
                  Grid.Row="1"
