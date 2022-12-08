@@ -76,7 +76,13 @@ namespace KeyBoardSpeed
                 scoreChange.Content = score.ToString();
                 letter.Background = new SolidColorBrush(Color.FromRgb(0, 255, 0));
             }
-            
+            else if (textRange.Text.Trim('\n', '\r').Last() != letter.Text.Last())
+            {
+                score--;
+                scoreChange.Content = score.ToString();
+                letter.Background = new SolidColorBrush(Color.FromRgb(255, 0, 0));
+
+            }
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)

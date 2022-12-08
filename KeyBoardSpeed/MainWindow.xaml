@@ -47,9 +47,11 @@
                      Grid.ColumnSpan="4" 
                      Margin="5,5,5,5"
                      Grid.Row="3"
+
                      TextChanged="RichTextBox_TextChanged" 
                     BorderBrush="#FF160F0F" FontFamily="Book Antiqua" FontWeight="Bold" 
                     FontSize="20"/>
+
         <Button Background="#C689C6"
             Click="Button_Click"
             Grid.Column="2" 
@@ -91,6 +93,9 @@
             </ListBox.ContextMenu>
         </ListBox>
             <TextBox Background="#FFECEF"
+
+        <TextBox Background="#FFECEF"
+
             x:Name="letter"
                 Grid.Column="1" 
                  Grid.Row="1"
