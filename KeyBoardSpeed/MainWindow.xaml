@@ -82,21 +82,19 @@
                HorizontalAlignment="Center"/>
         <ListBox x:Name="listbox"
                  Grid.Row="0"
-                 Grid.ColumnSpan="2">
+                 Grid.ColumnSpan="2"
+                 SelectionChanged="listbox_SelectionChanged">
             <ListBox.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Add" Click="MenuItem_Click"/>
-                    <MenuItem Header="Delete"/>
+                    <MenuItem Header="Delete" Click="MenuItem_Delete"/>
                     <Separator/>
                     <MenuItem Header="Change"/>
                 </ContextMenu>
             </ListBox.ContextMenu>
         </ListBox>
-            <TextBox Background="#FFECEF"
-
         <TextBox Background="#FFECEF"
-
-            x:Name="letter"
+                 x:Name="letter"
                 Grid.Column="1" 
                  Grid.Row="1"
                  Grid.RowSpan="2"
@@ -104,6 +102,9 @@
                  FontSize="100"
                  Margin="10,10,10,10"
                  TextAlignment="Center"
-                 IsReadOnly="True" BorderBrush="#FFBA11CF" Foreground="#FF171515" FontFamily="Century" BorderThickness="3,3,3,3"/>
+                 IsReadOnly="True" BorderBrush="#FFBA11CF" 
+                 Foreground="#FF171515" 
+                 FontFamily="Century" 
+                 BorderThickness="3,3,3,3"/>
     </Grid>
 </Window>
