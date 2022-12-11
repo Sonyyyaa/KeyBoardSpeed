@@ -80,11 +80,12 @@
                HorizontalAlignment="Center"/>
         <ListBox x:Name="listbox"
                  Grid.Row="0"
-                 Grid.ColumnSpan="2">
+                 Grid.ColumnSpan="2"
+                 SelectionChanged="listbox_SelectionChanged">
             <ListBox.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Add" Click="MenuItem_Click"/>
-                    <MenuItem Header="Delete"/>
+                    <MenuItem Header="Delete" Click="MenuItem_Delete"/>
                     <Separator/>
                     <MenuItem Header="Change"/>
                 </ContextMenu>
