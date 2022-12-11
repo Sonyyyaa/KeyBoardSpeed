@@ -93,11 +93,8 @@
                 </ContextMenu>
             </ListBox.ContextMenu>
         </ListBox>
-            <TextBox Background="#FFECEF"
-
         <TextBox Background="#FFECEF"
-
-            x:Name="letter"
+                 x:Name="letter"
                 Grid.Column="1" 
                  Grid.Row="1"
                  Grid.RowSpan="2"
@@ -105,6 +102,9 @@
                  FontSize="100"
                  Margin="10,10,10,10"
                  TextAlignment="Center"
-                 IsReadOnly="True" BorderBrush="#FFBA11CF" Foreground="#FF171515" FontFamily="Century" BorderThickness="3,3,3,3"/>
+                 IsReadOnly="True" BorderBrush="#FFBA11CF" 
+                 Foreground="#FF171515" 
+                 FontFamily="Century" 
+                 BorderThickness="3,3,3,3"/>
     </Grid>
 </Window>
